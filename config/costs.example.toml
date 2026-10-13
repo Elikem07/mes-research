@@ -1,0 +1,34 @@
+# Cost assumptions — EXAMPLE / PLACEHOLDER VALUES
+#
+# Committed to document the schema CostAssumptions.create() expects. Fill in
+# your own broker's commission schedule and fill-quality estimates:
+#   cp config/costs.example.toml config/costs.toml
+# config/costs.toml is gitignored.
+#
+# Contract specs are real exchange reference data. The friction numbers are
+# placeholders — zero friction is not a realistic assumption.
+
+[contract]
+tick_value = 1.25   # $ per tick (MES)
+multiplier = 5.0    # $ per index point (MES)
+
+[tier.optimistic]
+commission_rt             = 0.00   # PLACEHOLDER
+spread_entry_ticks        = 0.0    # PLACEHOLDER   # resting limit fills
+stop_slippage_ticks       = 0.0    # PLACEHOLDER   # no slippage
+limit_slippage_ticks      = 0.0   # PLACEHOLDER
+news_slippage_extra_ticks = 0.0  # PLACEHOLDER
+
+[tier.base]
+commission_rt             = 0.00   # PLACEHOLDER
+spread_entry_ticks        = 0.0    # PLACEHOLDER   # 1 tick crossed
+stop_slippage_ticks       = 0.0    # PLACEHOLDER   # 1 tick extra on stop
+limit_slippage_ticks      = 0.0   # PLACEHOLDER   # 1 tick if limit hits
+news_slippage_extra_ticks = 0.0  # PLACEHOLDER
+
+[tier.stress]
+commission_rt             = 0.00   # PLACEHOLDER
+spread_entry_ticks        = 0.0    # PLACEHOLDER   # 2 ticks crossed
+stop_slippage_ticks       = 0.0    # PLACEHOLDER   # 2 extra on stop
+limit_slippage_ticks      = 0.0   # PLACEHOLDER
+news_slippage_extra_ticks = 0.0  # PLACEHOLDER   # +4 during news

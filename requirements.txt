@@ -1,0 +1,9 @@
+pandas>=2.0
+numpy>=1.24
+
+# Parquet I/O for the cached bar store written by fetch_mes_data.py.
+pyarrow>=14.0
+
+# Only needed to FETCH bars (`fetch_mes_data.py`), which requires a running
+# IBKR TWS/Gateway session. The research and experiment modules do not import it.
+ib_insync>=0.9.86

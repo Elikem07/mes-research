@@ -54,7 +54,7 @@ publishing them is the point.
 ## Install
 
 ```bash
-pip install pandas numpy
+pip install -r requirements.txt
 ```
 
 Python 3.11+ (`tomllib`). Fetching data requires a futures data source with
